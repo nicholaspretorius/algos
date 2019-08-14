@@ -12,6 +12,14 @@ function palindrome(str) {
   return str === rev;
 }
 
+function palindromeEvery(str) {
+  return str.split("").every(comparison);
+}
+
+function comparison(letter, index, arr) {
+  return letter === arr[arr.length - (index + 1)];
+}
+
 function palindromeForMid(str) {
   const arr = str.split("");
   const mid = arr.length / 2;
