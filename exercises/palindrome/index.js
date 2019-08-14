@@ -7,6 +7,35 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  const rev = reverse(str);
+  return str === rev;
+}
+
+function palindromeForMid(str) {
+  const arr = str.split("");
+  const mid = arr.length / 2;
+  const trueFalse = [];
+
+  for (var i = 0; i < mid; i++) {
+    // console.log(arr[i], " : ", arr[arr.length - 1 - i], arr[i] == arr[arr.length - 1 - i]);
+    if (arr[i] == arr[arr.length - 1 - i]) {
+      trueFalse.push(true);
+    } else {
+      trueFalse.push(false);
+    }
+  }
+
+  return trueFalse.indexOf(false) >= 0 ? false : true;
+}
+
+function reverse(str) {
+  return str
+    .split("")
+    .reverse()
+    .join("");
+}
+
+palindrome("Fish hsif");
 
 module.exports = palindrome;
