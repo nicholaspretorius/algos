@@ -25,6 +25,8 @@ function palindromeForMid(str) {
   const mid = arr.length / 2;
   const trueFalse = [];
 
+  // could use: for (const [val, index] of arr.entries())
+  // https://flaviocopes.com/how-to-get-index-in-for-of-loop/
   for (var i = 0; i < mid; i++) {
     // console.log(arr[i], " : ", arr[arr.length - 1 - i], arr[i] == arr[arr.length - 1 - i]);
     if (arr[i] == arr[arr.length - 1 - i]) {
