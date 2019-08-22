@@ -9,6 +9,21 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(arr, size) {
+  const chunked = [];
+
+  for (let el of arr) {
+    let last = chunked[chunked.length - 1];
+    if (!last || last.length === size) {
+      chunked.push([el]);
+    } else {
+      last.push(el);
+    }
+  }
+
+  return chunked;
+}
+
+function chunkFor(arr, size) {
   let start = 0;
   let end = size;
   const chunked = [];
