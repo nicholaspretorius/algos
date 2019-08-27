@@ -9,6 +9,35 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
+  wordA = replaceAndLowerCase(stringA)
+    .split("")
+    .sort((a, b) => {
+      if (a > b) {
+        return -1;
+      } else if (a < b) {
+        return 1;
+      }
+    })
+    .join("");
+  wordB = replaceAndLowerCase(stringB)
+    .split("")
+    .sort((a, b) => {
+      if (a > b) {
+        return -1;
+      } else if (a < b) {
+        return 1;
+      }
+    })
+    .join("");
+
+  return wordA === wordB;
+}
+
+function replaceAndLowerCase(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase();
+}
+
+function anagramsOld(stringA, stringB) {
   const a = stringPrepare(stringA).join("");
   const b = stringPrepare(stringB).join("");
   return a === b;
